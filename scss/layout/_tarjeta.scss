@@ -1,0 +1,147 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: v.$very-dark-blue-mainBG;
+}
+
+.container {
+    width: 330px;
+    height: 550px;
+
+
+    background-color: v.$very-dark-blue-cardBG;
+
+    border-radius: 1rem;
+
+    .container-img {
+        position: relative;
+        margin: 2rem;
+        line-height: 0;
+        cursor: pointer;
+
+        &:hover::after {
+            display: flex;
+        }
+        
+        img {
+            
+            border-radius: 1rem;    
+        }
+
+        .capa {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            
+        }
+        
+        &::after {
+            content: '';
+            background-color: v.$cyan;
+            background-color: rgba(v.$cyan, .6);
+            background-image: url('./../../images/icon-view.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            display: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+    }
+
+}
+
+.info {
+    
+    margin: 2rem;
+    
+    .titulo {
+        color: v.$white;
+        font-weight: v.$semibold;
+        font-size: 2.2rem;
+        margin: 0;
+        cursor: pointer;
+
+        &:hover {
+            color: v.$cyan;
+        }
+    }
+
+    .text {
+        font-size: v.$font-size-paragraph;
+        font-weight: v.$delgada;
+        color: v.$soft-blue;
+        line-height: 1.5;
+
+    }
+}
+
+.data {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.8rem;
+
+    .ETH {
+        color: v.$cyan;
+        font-size: 1.55rem;
+        gap: .8rem;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .days {
+        color: v.$soft-blue;
+        font-size: 1.55rem;
+        gap: .8rem;
+
+        display: flex;
+        align-items: center;
+    }
+
+    border-bottom: 1px solid v.$very-dark-blue-line;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+    margin: 0 2rem;
+
+    .footer-img img {
+        height: 3rem;
+        border-radius: 50%;
+        border: .1rem solid v.$white;
+    }
+
+    .creation {
+        color: v.$soft-blue;
+        font-size: 1.5rem;
+        font-weight: v.$regular;
+        margin: 0;
+
+        span {
+            color: v.$white;
+            cursor: pointer;
+
+            &:hover {
+                color: v.$cyan;
+            }
+        }
+    }
+}
